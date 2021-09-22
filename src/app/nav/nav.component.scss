@@ -1,0 +1,53 @@
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width : 766px) {
+
+	.mouse-icon{
+		display:none;
+	}
+
+	.navbar-custom .navbar-brand,
+	.navbar-custom .navbar-nav > li > a,
+	.navbar-custom .navbar-nav .dropdown-menu > li > a {
+		padding:10px 15px;
+	}
+
+	.navbar-custom .dropdown-menu{
+		margin-left: 20px;
+	}
+
+}
+
+/* Landscape Mobile */
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+
+	.mouse-icon{
+		display:none;
+	}
+
+	.navbar-custom .navbar-brand,
+	.navbar-custom .navbar-nav > li > a,
+	.navbar-custom .navbar-nav .dropdown-menu > li > a {
+		padding:10px 15px;
+	}
+
+	.navbar-custom .dropdown-menu{
+		margin-left: 20px;
+	}
+
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width : 768px) and (max-width : 991px) {
+	.navbar-custom .navbar-brand{
+		padding: 10px 15px;
+	}
+
+	.navbar-custom .navbar-nav > li > a,
+	.navbar-custom .navbar-nav .dropdown-menu > li > a{
+		font-size: 12px;
+		padding: 15px;
+	}
+
+}

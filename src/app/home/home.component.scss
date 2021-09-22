@@ -119,3 +119,47 @@ SOCIAL ICON
   border: 1px solid transparent;
   z-index: -1;
 }
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width : 766px) {
+	.intro h1 {
+		font-size: 40px;
+		line-height: 40px;
+	}
+
+	.social-icons ul{
+		margin-left: 0;
+	}
+
+	.social-icons li{
+		padding:0;
+	}
+
+	.social-icons a i{
+		margin:0 5px;
+	}
+
+}
+
+/* Landscape Mobile */
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+	.intro h1 {
+		font-size: 60px;
+		line-height: 80px;
+	}
+
+	.social-icons ul{
+		margin-left: -5px;
+	}
+
+	.social-icons li{
+		padding:0 5px;
+	}
+
+	.social-icons a fa-icon{
+		margin:0 7px;
+	}
+
+}
+
+
