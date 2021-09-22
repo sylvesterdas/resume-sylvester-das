@@ -1,6 +1,6 @@
 /* === HOME === */
-@media (max-width: 640px) {
-  .tt-fullHeight {
+.tt-fullHeight {
+  @media (max-width: 640px) {
     height: 560px !important;
   }
 }
