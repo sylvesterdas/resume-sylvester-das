@@ -3,10 +3,262 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 28px;
+  font-weight: 300;
+  font-size: 14px;
+  color: #282828;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+/* Link style
+---------------------------------------------------------*/
+a {
+  color: #68c3a3;
+}
+a,
+a > * {
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  outline: none;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* Transition elsements
+-------------------------------------------------------- */
+.navbar a,
+.form-control {
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  -ms-transition: all 0.4s ease-in-out 0s;
+  -o-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+a,
+.btn {
+  -webkit-transition: all 0.125s ease-in-out 0s;
+  -moz-transition: all 0.125s ease-in-out 0s;
+  -ms-transition: all 0.125s ease-in-out 0s;
+  -o-transition: all 0.125s ease-in-out 0s;
+  transition: all 0.125s ease-in-out 0s;
+}
+
+/* Reset box-shadow
+/* ------------------------------------------------------ */
+
+.btn,
+.form-control,
+.form-control:hover,
+.form-control:focus,
+.navbar-custom .dropdown-menu {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* === Typography === */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 36px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+/* === FORM STYLE === */
+.form-control {
+  height: 45px;
+  background-color: #f7f7f7;
+  border: 1px solid #e8e8e8;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #68c3a3;
+  box-shadow: none;
+}
+
+/* Alert Style
+-----------------------------------------------------*/
+.alert {
+  padding: 10px 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.alert strong {
+  display: inline-block !important;
+  margin: 0 !important;
+}
+
+/* BUTTON STYLE
+-----------------------------------------------------*/
+/*common-btn*/
+.btn {
+  border: 0;
+  border-bottom: 3px solid;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 28px;
+  padding: 9px 22px;
+}
+
+/*large-btn*/
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 14px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/*btn-primary*/
+.btn-primary {
+  background-color: #68c3a3;
+  border-color: rgba(51, 51, 51, 0.15);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #4eb28f;
+  border-color: #4eb28f;
+}
+
+/*btn-info*/
+.btn-info {
+  background-color: #52b3d9;
+  border-color: rgba(51, 51, 51, 0.15);
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #4aa0c2;
+  border-color: #4aa0c2;
+}
+
+/*btn-default*/
+.btn-default {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active {
+  color: #68c3a3;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+button:focus {
+  outline: none;
+}
+
+/*IMAGES*/
+img {
+  width: 100%;
+}
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+/* LIST STYLE
+-------------------------------------------------- */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.list-check li {
+  position: relative;
+  font-size: 18px;
+  line-height: 32px;
+}
+ul.list-check li::before {
+  content: '';
+  font-family: "FontAwesome";
+  color: #68c3a3;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 900;
+}
+
+/* === MAIN === */
+.section-padding {
+  padding: 120px 0 100px;
+}
+
 /* SECTION TITLE
 ----------------------------------------------------- */
 .section-title {
-  margin-top: 1rem;
   margin-bottom: 80px;
   text-align: center;
   font-size: 50px;
@@ -33,3 +285,9 @@ ol {
   padding: 0;
   list-style: none;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
