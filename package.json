@@ -3,14 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run serve:ssr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run resume-ng2:serve-ssr",
-    "serve:ssr": "node dist/resume-ng2/server/main.js",
+    "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build && ng run resume-ng2:server",
-    "prerender": "ng run resume-ng2:prerender"
+    "prerender": "ng run resume-ng2:prerender",
+    "build:functions": "npm run --prefix functions build",
+    "build:all": "npm run build:ssr && npm run build:functions"
   },
   "private": true,
   "dependencies": {
