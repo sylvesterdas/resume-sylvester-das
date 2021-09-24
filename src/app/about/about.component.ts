@@ -1,11 +1,34 @@
 import { Component } from '@angular/core';
 import { faPaperPlane, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
+import { transform } from 'typescript';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  animations: [
+    trigger('fadeInUp', [
+      state('closed', style({
+        opacity: 0.0,
+        transform: 'translateY(100%)',
+      })),
+      state('opened', style({
+        opacity: 1.0,
+        transform: 'translateY(0)'
+      })),
+      transition('closed => opened', [
+        animate('1s 0.5s ease')
+      ])
+    ])
+  ]
 })
 export class AboutComponent {
 
@@ -38,5 +61,11 @@ export class AboutComponent {
   objective = "An opportunity to work and upgrade oneself, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community. I'm presently expanding my solid experience in multiple technologies like NodeJS, Angular, ReactJS, and hybrid mobile application development using Flutter. I focus on using my interpersonal skills to build good user experience and create a strong interest in my employers. I hope to develop skills in motion design and my knowledge of the Web, and become an honest asset to the business. As an individual, I'm self-confident you’ll find me creative, funny and naturally passionate. I’m a forward thinker, which others may find inspiring when working as a team."
 
   whatIdo = "I have been working as a MEAN / MERN stack developer. I have a love of performance and object oriented programming, and I have lots of experience in the production of modern web and mobile applications with high performance. I loving creating awesome products and as per my clients’ need. I think user experience when I try to craft something for my clients. Making it awesome.";
+
+  isOpen = false;
+
+  onAppear(): void {
+    this.isOpen = true;
+  }
 
 }

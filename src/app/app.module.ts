@@ -8,13 +8,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppearDirective } from './appear.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-    AboutComponent
+    AboutComponent,
+    AppearDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

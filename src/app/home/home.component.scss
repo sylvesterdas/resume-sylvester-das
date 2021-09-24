@@ -67,9 +67,8 @@
 SOCIAL ICON
 -------------------------------------------*/
 
-
 .social-icons li {
-  margin: auto 1.5rem;
+  margin: auto 1.8rem;
   padding: 0.5rem;
 }
 
@@ -77,6 +76,7 @@ SOCIAL ICON
   position: relative;
   color: #fff;
   font-size: 18px;
+  transform: translateX(-50%);
   margin: auto;
   line-height: 40px;
   text-align: center;
