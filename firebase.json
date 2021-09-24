@@ -3,7 +3,7 @@
     "source": "functions"
   },
   "hosting": {
-    "public": "dist/browser",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -11,7 +11,8 @@
       "app.yaml",
       "functions",
       ".vscode",
-      "src"
+      "src",
+      "dist"
     ],
     "rewrites": [
       {
