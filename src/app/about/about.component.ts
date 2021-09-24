@@ -8,7 +8,6 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { transform } from 'typescript';
 
 @Component({
   selector: 'app-about',
@@ -16,16 +15,16 @@ import { transform } from 'typescript';
   styleUrls: ['./about.component.scss'],
   animations: [
     trigger('fadeInUp', [
-      state('closed', style({
+      state('close', style({
         opacity: 0.0,
         transform: 'translateY(100%)',
       })),
-      state('opened', style({
+      state('open', style({
         opacity: 1.0,
         transform: 'translateY(0)'
       })),
-      transition('closed => opened', [
-        animate('1s 0.5s ease')
+      transition('close => open', [
+        animate('0.5s 0.3s ease')
       ])
     ])
   ]
@@ -62,10 +61,10 @@ export class AboutComponent {
 
   whatIdo = "I have been working as a MEAN / MERN stack developer. I have a love of performance and object oriented programming, and I have lots of experience in the production of modern web and mobile applications with high performance. I loving creating awesome products and as per my clients’ need. I think user experience when I try to craft something for my clients. Making it awesome.";
 
-  isOpen = false;
+  isAboutTitleOpen = 'close';
 
-  onAppear(): void {
-    this.isOpen = true;
+  onAboutTitleOpen() {
+    this.isAboutTitleOpen = 'open';
   }
 
 }

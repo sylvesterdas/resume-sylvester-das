@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppearDirective } from './appear.directive';
+import { WindowService } from './window.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AppearDirective } from './appear.directive';
     HomeComponent,
     NavComponent,
     AboutComponent,
-    AppearDirective
+    AppearDirective,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -24,7 +25,7 @@ import { AppearDirective } from './appear.directive';
     FontAwesomeModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [WindowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

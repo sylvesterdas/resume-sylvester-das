@@ -1,101 +1,51 @@
-import {
-  ElementRef,
-  Output,
-  Directive,
-  AfterViewInit,
-  OnDestroy,
-  EventEmitter,
-  HostListener,
-} from '@angular/core';
-import { Subscription, fromEvent } from 'rxjs';
-import { startWith } from 'rxjs/operators';
+import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import { WindowService } from './window.service';
 
 @Directive({
-  selector: '[appear]',
+  selector: '[appear]'
 })
-export class AppearDirective implements AfterViewInit, OnDestroy {
+export class AppearDirective {
+
+  windowHeight: number = 0;
+  elementHeight: number = 0;
+  elementPos: number = 0;
+
   @Output()
-  appear: EventEmitter<void>;
+  appear: EventEmitter<boolean>;
 
-  elementPos: number|any;
-  elementHeight: number|any;
-
-  scrollPos: number|any;
-  windowHeight: number|any;
-
-  subscriptionScroll: Subscription|any;
-  subscriptionResize: Subscription|any;
-
-  constructor(private element: ElementRef) {
-    this.appear = new EventEmitter<void>();
+  constructor(
+    private element: ElementRef,
+    private window: WindowService
+  ) {
+    this.appear = new EventEmitter<boolean>();
   }
 
-  @HostListener('window:scroll', ['$event']) // for window scroll events
-  onScroll(event: any) {
-    this.scrollPos = (event.path[1].scrollY);
-    this.checkVisibility();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.elementPos = this.getOffsetTop(this.element);
-    this.elementHeight = this.element.nativeElement;
-    this.windowHeight = event.path[1].innerHeight;
-    this.checkVisibility();
-  }
-
-  getOffsetTop(element: any) {
-    let offsetTop = element.offsetTop || 0;
-    if (element.offsetParent) {
-      offsetTop += this.getOffsetTop(element.offsetParent);
-    }
-    return offsetTop;
-  }
-  checkVisibility() {
-    console.log(this.isVisible());
-    if (this.isVisible()) {
-      this.unsubscribe();
-      this.appear.emit();
-    }
-  }
-  isVisible() {
-    console.log(this.scrollPos);
-    console.log(this.elementPos);
-    console.log(this.windowHeight);
-    console.log(this.scrollPos);
-    return (
-      this.scrollPos >= this.elementPos ||
-      this.scrollPos + this.windowHeight >= this.elementPos + this.elementHeight
-    );
-  }
-
-  subscribe() {
-    // this.subscriptionScroll = fromEvent(this.window, 'scroll')
-    //   .pipe(startWith(null))
-    //   .subscribe(() => {
-    //     this.saveScrollPos();
-    //     this.checkVisibility();
-    //   });
-    // this.subscriptionResize = fromEvent(this.window, 'resize')
-    //   .pipe(startWith(null))
-    //   .subscribe(() => {
-    //     this.saveDimensions();
-    //     this.checkVisibility();
-    //   });
-  }
-  unsubscribe() {
-    if (this.subscriptionScroll) {
-      this.subscriptionScroll.unsubscribe();
-    }
-    if (this.subscriptionResize) {
-      this.subscriptionResize.unsubscribe();
+  checkVisible() {
+    if (this.elementPos < this.window.nativeWindow.scrollY + this.windowHeight) {
+      this.appear.emit(true);
+      this.appear.complete();
     }
   }
 
-  ngAfterViewInit() {
-    this.subscribe();
+  @HostListener('window:scroll', [])
+  onScroll() {
+    this.checkVisible();
   }
-  ngOnDestroy() {
-    this.unsubscribe();
+
+  @HostListener('window:load', [])
+  onLoad() {
+    this.windowHeight = (this.window.nativeWindow.innerHeight);
+    this.elementHeight = (this.element.nativeElement as HTMLElement).offsetHeight;
+    this.elementPos = (this.element.nativeElement as HTMLElement).offsetTop;
+    this.checkVisible();
   }
+
+  @HostListener('window:resize', [])
+  onResize() {
+    this.windowHeight = (this.window.nativeWindow.innerHeight);
+    this.elementHeight = (this.element.nativeElement as HTMLElement).offsetHeight;
+    this.elementPos = (this.element.nativeElement as HTMLElement).offsetTop;
+    this.checkVisible();
+  }
+
 }
