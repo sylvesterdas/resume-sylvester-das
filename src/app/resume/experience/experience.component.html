@@ -1,0 +1,15 @@
+<div class="col-md-12 mb-0">
+  <div class="resume-title">
+    <h3>Experience</h3>
+  </div>
+  <div class="resume">
+    <ul class="timeline">
+      <app-card
+        *ngFor="let exp of experience; index as i"
+        [data]="exp"
+        [lastChild]="i + 1 === experience.length"
+        [inverted]="i % 2 === 0"
+      ></app-card>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<li [class.timeline-inverted]="inverted" class="mb-50" [class.last-child]="lastChild">
+  <div class="posted-date">
+    <span class="month">{{ data.time }}</span>
+  </div>
+  <!-- /posted-date -->
+
+  <div class="timeline-panel wow fadeInUp">
+    <div class="timeline-content">
+      <div class="timeline-heading">
+        <h3>{{ data.head }}</h3>
+        <span
+          ><a *ngFor="let link of data.links" [href]="link.a" target="_blank">{{
+            link.content
+          }}</a></span
+        >
+      </div>
+      <!-- /timeline-heading -->
+
+      <div class="timeline-body">
+        <p *ngFor="let p of data.body" [innerHtml]="p"></p>
+      </div>
+      <!-- /timeline-body -->
+    </div>
+    <!-- /timeline-content -->
+  </div>
+  <!-- /timeline-panel -->
+</li>

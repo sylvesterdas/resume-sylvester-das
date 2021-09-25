@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppearDirective } from './appear.directive';
 import { WindowService } from './window.service';
+import { ResumeModule } from './resume/resume.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { WindowService } from './window.service';
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    ResumeModule
   ],
   providers: [WindowService],
   bootstrap: [AppComponent]

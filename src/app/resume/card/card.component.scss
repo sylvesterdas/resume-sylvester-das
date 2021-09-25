@@ -1,0 +1,215 @@
+li {
+  position: relative;
+  margin-bottom: 50px;
+  min-height: 50px;
+}
+
+li:before,
+li:after {
+  content: " ";
+  display: table;
+}
+
+li:after {
+  clear: both;
+}
+
+li .timeline-panel {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-content {
+  padding: 5px 20px 0 20px;
+}
+
+li .timeline-panel:before {
+  right: auto;
+  left: -15px;
+  border-right-width: 15px;
+  border-left-width: 0;
+}
+
+li .timeline-panel:after {
+  right: auto;
+  left: -14px;
+  border-right-width: 14px;
+  border-left-width: 0;
+}
+
+li .posted-date {
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  left: 20px;
+}
+
+li .posted-date .month {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  display: block;
+  color: #2c3e50;
+  top: 0;
+  float: left;
+}
+
+li.timeline-inverted > .timeline-panel {
+  float: right;
+  text-align: left;
+}
+
+li.timeline-inverted > .timeline-panel:before {
+  right: auto;
+  left: -15px;
+  border-right-width: 15px;
+  border-left-width: 0;
+}
+
+li.timeline-inverted > .timeline-panel:after {
+  right: auto;
+  left: -14px;
+  border-right-width: 14px;
+  border-left-width: 0;
+}
+
+li.last-child {
+  margin-bottom: 0;
+}
+
+.timeline-heading h3 {
+  font-size: 20px;
+  line-height: 28px;
+}
+.timeline-heading span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+  li {
+    margin-bottom: 15px;
+    min-height: 100px;
+  }
+
+  li .posted-date {
+    position: absolute;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  li .timeline-panel {
+    float: left;
+    width: 43%;
+    text-align: right;
+    border: 1px solid #eee;
+    position: relative;
+  }
+
+  .timeline-content {
+    position: relative;
+    padding: 24px;
+    background-color: #fff;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms;
+  }
+
+  .timeline-content::after {
+    border: 1px solid #eee;
+    width: 100%;
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    height: 10px;
+    left: 0;
+    z-index: -1;
+  }
+
+  li .timeline-content:hover {
+    background: #68c3a3;
+    color: #fff;
+  }
+
+  li .timeline-panel::before,
+  li.timeline-inverted .timeline-panel::before {
+    content: "";
+    top: 25px;
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  li .timeline-panel::before {
+    left: 100%;
+    border-left: 12px solid #ececec;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms;
+  }
+  li .timeline-panel:hover::before {
+    border-left: 12px solid #68c3a3;
+  }
+
+  li.timeline-inverted .timeline-panel::before {
+    right: 100%;
+    border-right: 12px solid #ececec;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms;
+  }
+  li.timeline-inverted .timeline-panel:hover::before {
+    border-right: 12px solid #68c3a3;
+    border-left: 0;
+  }
+
+  li .timeline-panel::after,
+  li.timeline-inverted .timeline-panel::after {
+    content: "";
+    top: 25px;
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  li .timeline-panel::after {
+    left: 100%;
+    margin-left: -2px;
+    border-left: 12px solid #ffffff;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms;
+  }
+  li .timeline-panel:hover::after {
+    border-left: 12px solid #68c3a3;
+  }
+
+  li.timeline-inverted .timeline-panel::after {
+    right: 100%;
+    margin-right: -2px;
+    border-right: 12px solid #ffffff;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms;
+  }
+  li.timeline-inverted .timeline-panel:hover::after {
+    border-right: 12px solid #68c3a3;
+    border-left: 0;
+  }
+
+  li .posted-date {
+    left: 50%;
+    width: 120px;
+    margin-left: -60px;
+    margin-top: 28px;
+  }
+  li .posted-date .month {
+    float: none;
+  }
+}
+

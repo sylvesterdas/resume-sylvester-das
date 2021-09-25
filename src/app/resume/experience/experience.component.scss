@@ -1,0 +1,94 @@
+
+.resume {
+  position: relative;
+}
+
+.resume:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 10px;
+  height: 10px;
+  background-color: #e1e1e1;
+  left: 50%;
+  margin-left: -6px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.resume:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  width: 10px;
+  height: 10px;
+  background-color: #e1e1e1;
+  left: 50%;
+  margin-left: -6px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.resume-title h3 {
+  text-align: center;
+}
+
+.resume-title {
+  margin-bottom: 30px;
+}
+
+.timeline {
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1.5px;
+  background-color: #e1e1e1;
+}
+
+@media (min-width: 992px) {
+  .timeline:before {
+    left: 50%;
+  }
+}
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width : 991px) {
+  /*resume*/
+	.resume:before,
+	.resume:after{
+		left:1px;
+	}
+}
+
+// /* Landscape Mobile */
+// @media only screen and (min-width: 480px) and (max-width: 767px) {
+//   /*resume*/
+//   .resume:before,
+//   .resume:after {
+//     left: 1px;
+//   }
+// }
+
+
+// /* Small devices (tablets, 768px and up) */
+// @media (min-width : 768px) and (max-width : 991px) {
+//   /*resume*/
+// 	.resume:before,
+// 	.resume:after{
+// 		left:0px;
+// 	}
+// }
