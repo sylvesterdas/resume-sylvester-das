@@ -12,6 +12,7 @@ export class SkillsComponent {
     Firebase: 95,
     Electron: 60,
   }
+
   skills2: any = {
     Flutter: 90,
     Angular: 85,

@@ -15,7 +15,8 @@
   width: 25%;
   float: left;
 }
-.skill-title h3 {
+
+h3 {
   font-size: 18px;
   font-weight: 400;
   margin-top: -6px;
@@ -70,7 +71,10 @@
   margin-bottom: 5px;
 }
 
-/* === Chart CSS  === */
+.text-center h3 {
+  margin: 20px;
+}
+
 .chart {
   position: relative;
   display: inline-block;
@@ -79,41 +83,13 @@
   margin: 40px auto;
   text-align: center;
 }
-.chart canvas {
+
+round-progress:after {
+  content: attr(aria-valuenow) " %";
   position: absolute;
-  top: 0;
-  left: 0;
-}
-.percent {
-  display: inline-block;
-  margin: auto;
-  line-height: 140px;
-  z-index: 2;
-  font-size: 25px;
-  font-weight: 500;
-  text-align: center;
-}
-
-.percent:after {
-  content: "%";
-}
-
-.chart-text span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 18px;
-  font-weight: 400;
-  text-transform: capitalize;
-  display: block;
-  margin-top: 20px;
+  font-weight: 500;
 }
-
-/*.percent:after {content: '%';margin-left: 0.1em;font-size: .8em;}*/
-.angular {
-  margin-top: 100px;
-}
-.angular .chart {
-  margin-top: 0;
-}
-.chart .chart-text h3 {
-  font-size: 22px;
-}
-
