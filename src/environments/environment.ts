@@ -7,6 +7,7 @@ export const environment = {
   production: false,
   title: "Sylvester Das - Software programmer, Website and Application developer",
   ...seo,
+  googleMapsApiKey: "AIzaSyDePhvLW-EQAc9iFy2l3wfU0gXogCsiftE",
 };
 
 /*

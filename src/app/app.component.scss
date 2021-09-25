@@ -34,3 +34,31 @@
 }
 
 
+
+/* ---------------------------------------------- /*
+ * Scroll to top
+/* ---------------------------------------------- */
+
+.scroll-up {
+  position: fixed;
+  z-index: 999;
+  bottom: 1.8em;
+  right: 1.8em;
+}
+
+.scroll-up a {
+  background-color: #68c3a3;
+  display: block;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.scroll-up a:hover,
+.scroll-up a:active {
+  background-color: rgba(235, 235, 235, 0.8);
+  color: #222;
+}

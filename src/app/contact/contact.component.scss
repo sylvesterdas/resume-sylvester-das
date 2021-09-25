@@ -1,0 +1,87 @@
+
+/* === Contact Section === */
+
+.contact-section strong {
+  display: block;
+  text-transform: uppercase;
+}
+.contact-form strong {
+  margin-bottom: 40px;
+}
+
+.contact-form textarea.form-control {
+  height: 115px;
+}
+
+.contact-form .btn {
+  margin-top: 15px;
+}
+
+.contact-section div > i {
+  float: left;
+  font-size: 45px;
+  margin-right: 20px;
+}
+.contact-section address,
+.contact-section .contact-number {
+  overflow: hidden;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom: 45px;
+}
+
+/*MAP*/
+.location-map {
+  padding: 4px;
+  border: 1px solid #eee;
+  border-bottom: 3px double #eee;
+}
+
+
+@media (max-width : 766px) {
+
+	/*contact section*/
+	.contact-form {
+		margin-bottom: 40px;
+	}
+
+	.contact-section div > i {
+		float: none;
+		margin-right: 0;
+	}
+	.center-xs {
+		text-align: center;
+	}
+}
+
+/* Landscape Mobile */
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+	/*contact section*/
+	.contact-form {
+		margin-bottom: 40px;
+	}
+
+	.contact-section .map-icon,
+	.contact-section .mobile-icon {
+		float: none;
+	}
+	.center-xs {
+		text-align: center;
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width : 768px) and (max-width : 991px) {
+	/*contact section*/
+	.contact-form {
+		margin-bottom: 40px;
+	}
+
+	.contact-section .map-icon,
+	.contact-section .mobile-icon {
+		float: left;
+	}
+	.center-xs {
+		text-align: left;
+	}
+}

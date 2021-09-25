@@ -9,6 +9,10 @@ import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { ResumeModule } from './resume/resume.module';
 import { SkillsModule } from './skills/skills.module';
+import { ContactComponent } from './contact/contact.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,18 @@ import { SkillsModule } from './skills/skills.module';
     HomeComponent,
     NavComponent,
     AboutComponent,
+    ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FontAwesomeModule,
     ResumeModule,
-    SkillsModule
+    SkillsModule,
+    GoogleMapsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
