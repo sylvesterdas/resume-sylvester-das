@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { ResumeModule } from './resume/resume.module';
+import { SkillsModule } from './skills/skills.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ResumeModule } from './resume/resume.module';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FontAwesomeModule,
-    ResumeModule
+    ResumeModule,
+    SkillsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

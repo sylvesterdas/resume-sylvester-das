@@ -1,0 +1,80 @@
+<!-- Skills Section -->
+<section id="skills" class="skills-section section-padding">
+  <div class="container">
+    <h2 class="section-title wow fadeInUp">Skills</h2>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="skill-progress" *ngFor="let skill of skills1 | keyvalue">
+          <div class="skill-title">
+            <h3>{{ skill.key }}</h3>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar six-sec-ease-in-out"
+              role="progressbar"
+              [attr.aria-valuenow]="skill.value"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <span>{{ skill.value }}%</span>
+            </div>
+          </div>
+          <!-- /.progress -->
+        </div>
+        <!-- /.skill-progress -->
+      </div>
+      <!-- /.col-md-6 -->
+
+      <div class="col-md-6">
+        <div class="skill-progress" *ngFor="let skill of skills2 | keyvalue">
+          <div class="skill-title">
+            <h3>{{ skill.key }}</h3>
+          </div>
+          <canvas baseChart
+            type="doughnut"
+            [attr.data]="skill.value"
+          >
+          </canvas>
+        </div>
+        <div class="skill-progress" *ngFor="let skill of skills2 | keyvalue">
+          <div class="skill-title">
+            <h3>{{ skill.key }}</h3>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar six-sec-ease-in-out"
+              role="progressbar"
+              [attr.aria-valuenow]="skill.value"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <span>{{ skill.value }}%</span>
+            </div>
+          </div>
+          <!-- /.progress -->
+        </div>
+        <!-- /.skill-progress -->
+      </div>
+      <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+
+    <div class="skill-chart text-center">
+      <h3>More skills</h3>
+    </div>
+
+    <div class="row more-skill text-center">
+      <div class="col-xs-12 col-sm-4 col-md-2" *ngFor="let skill of moreSkills | keyvalue">
+        <div class="chart" [attr.data-percent]="skill.value" data-color="e74c3c">
+          <span class="percent"></span>
+          <div class="chart-text">
+            <span>{{ skill.key }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</section>
+<!-- End Skills Section -->
