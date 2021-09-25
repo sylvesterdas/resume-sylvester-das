@@ -20,12 +20,12 @@
       <!-- col-md-4 -->
 
       <div class="col-md-8 col-md-pull-4">
-        <div class="short-info wow fadeInUp">
+        <div (appear)="onObjectiveTitleOpen()" [@fadeInUp]="isObjectiveTitleOpen" class="short-info">
           <h3>Objective</h3>
           <p>{{ objective }}</p>
         </div>
 
-        <div class="short-info wow fadeInUp">
+        <div (appear)="onWhatIDoTitleOpen()" [@fadeInUp]="isWhatIDoTitleOpen" class="short-info">
           <h3>What I Do ?</h3>
           <p>{{ whatIdo }}</p>
 
