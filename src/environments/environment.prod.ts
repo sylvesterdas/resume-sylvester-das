@@ -16,7 +16,7 @@ export const environment = {
     { name: 'p:domain_verify', content: '6a4ac6b3b4f9c9ef78bd2a2f0e90c42e' },
   ],
   twitter: [
-    { name: "twitter:card", content: "Sylvester Das - Software programmer, Website and Application developer" },
+    { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:site", content: "@achillies_" },
     { name: "twitter:creator", content: "@achillies_" },
   ]
