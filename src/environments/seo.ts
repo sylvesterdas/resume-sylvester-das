@@ -1,9 +1,9 @@
 
 
-const ogImagePath = "/assets/images/sylvester-das-og-image.png";
+const url = 'https://www.sylvesterdas.com';
+const ogImagePath = url + "/assets/images/sylvester-das-og-image.png";
 const title = "Sylvester Das - Software programmer, Website and Application developer";
 const description = "My name is Sylvester Das, I have been working as a MEAN / MERN stack developer. I have a love of performance and object oriented programming, and I have lots of experience in the production of modern web and mobile applications with high performance. I loving creating awesome products and as per my clients’ need. I think user experience when I try to craft something for my clients. Making it awesome.";
-const url = 'https://www.sylvesterdas.com';
 
 const meta = [
   { name: 'author', content: 'Sylvester Das' },
