@@ -11,7 +11,7 @@ export class ResumeComponent {
     {
       time: "2010",
       head: "Higher Secondary certificate",
-      links: [{ a: "http://www.elphinstone.ac.in/", content: "Elphinstone College, Maharashtra board, Mumbai, IN" }],
+      links: [{ a: "http://www.elphinstone.ac.in/", content: "Elphinstone College, Mumbai, IN" }],
       body: [
         "From this college of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend."
       ]
@@ -21,7 +21,7 @@ export class ResumeComponent {
       head: "Bachelor of Science in IT",
       links: [
         { a: "https://mu.ac.in/", content: "University of Mumbai, Mumbai, IN" },
-        { a: "https://www.wilsoncollege.edu/", content: "Elphinstone College, Wilson College, Mumbai, IN" }
+        { a: "https://www.wilsoncollege.edu/", content: "Wilson College, Mumbai, IN" }
       ],
       body: [
         "I have completed Bachelors degree from the Mumbai University, Mumbai, India"
@@ -55,7 +55,7 @@ export class ResumeComponent {
       time: "2016",
       head: "Intern - Android app development",
       links: [
-        { a: "https://intellinects.com", content: "Intellinects Ventures Pvt Ltd, Mumbai, IN" }
+        { a: "https://intellinects.com", content: "Intellinects Ventures, Mumbai, IN" }
       ],
       body: [
         "The starting point of my programming career. Apart from android, includes a project that required me to build it using any Java framework, so I used Struts2.",
@@ -66,7 +66,7 @@ export class ResumeComponent {
       time: "2016 - 2017",
       head: "Full stack programmer",
       links: [
-        { a: "https://intellinects.com", content: "Intellinects Ventures Pvt Ltd, Mumbai, IN" }
+        { a: "https://intellinects.com", content: "Intellinects Ventures, Mumbai, IN" }
       ],
       body: [
         "One of the major projects that I was involved in was The bus tracking system for parents/administators of the school to track the location of the respective school buses. This projects reqired intense Android skills along with the ability to sync the location of the bus to the corresponding parents/administrator."
@@ -76,7 +76,7 @@ export class ResumeComponent {
       time: "May, 2017",
       head: "Android Consultant",
       links: [
-        { a: "https://tacto.in", content: "Tacto Infomedia Pvt Ltd, Mumbai, IN" }
+        { a: "https://tacto.in", content: "Tacto Infomedia, Mumbai, IN" }
       ],
       body: [
         "A freelance contract for a month, WORTH IT!",
@@ -87,7 +87,7 @@ export class ResumeComponent {
       time: "2017 - 2018",
       head: "Software Developer",
       links: [
-        { a: "https://purelogic.in/", content: "Purelogic Labs India Pvt. Ltd., New Delhi, IN" }
+        { a: "https://purelogic.in/", content: "Purelogic Labs India, New Delhi, IN" }
       ],
       body: [
         "We are a system solution architect, a one stop solution provider that builds electric hardware from scratch.",
@@ -99,7 +99,7 @@ export class ResumeComponent {
       time: "2018 - 2020",
       head: "Senior Software Engineer",
       links: [
-        { a: "https://tacto.in", content: "Tacto Infomedia Pvt Ltd, Mumbai, IN" }
+        { a: "https://tacto.in", content: "Tacto Infomedia, Mumbai, IN" }
       ],
       body: [
         "Service-based company for technical solutions and software development",
@@ -110,7 +110,7 @@ export class ResumeComponent {
       time: "2020 - ...",
       head: "Senior Software Engineer",
       links: [
-        { a: "https://www.scitara.com", content: "Scitara Technologies Pvt. Ltd., Mumbai, IN" }
+        { a: "https://www.scitara.com", content: "Scitara Technologies, Mumbai, IN" }
       ],
       body: [
         "Scitara is a global provider of laboratory-specific, cloud-based software solutions for the life sciences and other science-based industries.",

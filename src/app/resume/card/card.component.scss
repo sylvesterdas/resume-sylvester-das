@@ -2,57 +2,57 @@ li {
   position: relative;
   margin-bottom: 50px;
   min-height: 50px;
-}
 
-li:before,
-li:after {
-  content: " ";
-  display: table;
-}
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
 
-li:after {
-  clear: both;
-}
+  &:after {
+    clear: both;
+  }
 
-li .timeline-panel {
-  float: left;
-  position: relative;
-  width: 100%;
+  .timeline-panel {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    &:before {
+      right: auto;
+      left: -15px;
+      border-right-width: 15px;
+      border-left-width: 0;
+    }
+
+    &:after {
+      right: auto;
+      left: -14px;
+      border-right-width: 14px;
+      border-left-width: 0;
+    }
+  }
+
+  .posted-date {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    left: 20px;
+
+    .month {
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 700;
+      display: block;
+      color: #2c3e50;
+      top: 0;
+      float: left;
+    }
+  }
 }
 
 .timeline-content {
   padding: 5px 20px 0 20px;
-}
-
-li .timeline-panel:before {
-  right: auto;
-  left: -15px;
-  border-right-width: 15px;
-  border-left-width: 0;
-}
-
-li .timeline-panel:after {
-  right: auto;
-  left: -14px;
-  border-right-width: 14px;
-  border-left-width: 0;
-}
-
-li .posted-date {
-  position: relative;
-  text-align: center;
-  background-color: #fff;
-  left: 20px;
-}
-
-li .posted-date .month {
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: 700;
-  display: block;
-  color: #2c3e50;
-  top: 0;
-  float: left;
 }
 
 li.timeline-inverted > .timeline-panel {
@@ -86,6 +86,16 @@ li.last-child {
   display: block;
   font-weight: 700;
   margin-bottom: 20px;
+
+  a {
+    font-size: large;
+    line-height: 48px;
+
+    &:after {
+      content: "\a";
+      white-space: pre;
+    }
+  }
 }
 
 @media (min-width: 992px) {
