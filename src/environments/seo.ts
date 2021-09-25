@@ -5,7 +5,7 @@ const ogImagePath = url + "/assets/images/sylvester-das-og-image.png";
 const title = "Sylvester Das - Software programmer, Website and Application developer";
 const description = "My name is Sylvester Das, I have been working as a MEAN / MERN stack developer. I have a love of performance and object oriented programming, and I have lots of experience in the production of modern web and mobile applications with high performance. I loving creating awesome products and as per my clients’ need. I think user experience when I try to craft something for my clients. Making it awesome.";
 
-const meta = [
+const meta: any[] = [
   { name: 'author', content: 'Sylvester Das' },
   { name: 'description', content: description },
   { name: 'keywords', content: 'Software developer in mumbai, web application developer in mumbai, hire website developer in mumbai, Sylvester Das, mobile app developer in mumbai, hybrid app developer in mumbai, developer in mumbai, programmer in mumbai' },

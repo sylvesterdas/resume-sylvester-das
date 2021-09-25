@@ -23,7 +23,7 @@ export class HomeComponent {
   ) {
     const { title, meta, twitter } = environment;
     this.titleService.setTitle(title);
-    this.metaService.addTags(meta, true);
+    this.metaService.addTags(meta);
     this.metaService.addTags(twitter);
   }
 
