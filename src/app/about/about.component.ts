@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 import { faPaperPlane, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,25 +6,6 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  animations: [
-    trigger('fadeInUp', [
-      state(
-        'close',
-        style({
-          opacity: 0.0,
-          transform: 'translateY(100%)',
-        })
-      ),
-      state(
-        'open',
-        style({
-          opacity: 1.0,
-          transform: 'translateY(0)',
-        })
-      ),
-      transition('close => open', [animate('1.5s 1s ease')]),
-    ]),
-  ],
 })
 export class AboutComponent {
   faPaperPlane = faPaperPlane;
@@ -61,19 +41,4 @@ export class AboutComponent {
   whatIdo =
     'I have been working as a MEAN / MERN stack developer. I have a love of performance and object oriented programming, and I have lots of experience in the production of modern web and mobile applications with high performance. I loving creating awesome products and as per my clients’ need. I think user experience when I try to craft something for my clients. Making it awesome.';
 
-  isAboutTitleOpen = 'close';
-  isObjectiveTitleOpen = 'close';
-  isWhatIDoTitleOpen = 'close';
-
-  onAboutTitleOpen() {
-    this.isAboutTitleOpen = 'open';
-  }
-
-  onObjectiveTitleOpen() {
-    this.isObjectiveTitleOpen = 'open';
-  }
-
-  onWhatIDoTitleOpen() {
-    this.isWhatIDoTitleOpen = 'open';
-  }
 }

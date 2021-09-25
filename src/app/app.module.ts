@@ -7,9 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppearDirective } from './appear.directive';
-import { WindowService } from './window.service';
 import { ResumeModule } from './resume/resume.module';
 
 @NgModule({
@@ -18,16 +15,14 @@ import { ResumeModule } from './resume/resume.module';
     HomeComponent,
     NavComponent,
     AboutComponent,
-    AppearDirective,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FontAwesomeModule,
-    BrowserAnimationsModule,
     ResumeModule
   ],
-  providers: [WindowService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

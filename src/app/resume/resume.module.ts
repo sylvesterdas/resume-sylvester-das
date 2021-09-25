@@ -4,8 +4,6 @@ import { ResumeComponent } from './resume.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { CardComponent } from './card/card.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -14,12 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ResumeComponent,
     EducationComponent,
     ExperienceComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule
   ],
   exports: [
     ResumeComponent
