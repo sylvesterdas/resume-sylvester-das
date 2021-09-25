@@ -10,10 +10,12 @@ import { environment } from 'src/environments/environment';
 })
 export class HomeComponent {
 
-  faFacebook = faFacebook
-  faInstagram = faInstagram
-  faTwitter = faTwitter
-  faLinkedinIn = faLinkedinIn;
+  socialIcons = [
+    { href: "https://www.facebook.com/sylvester.das", icon: faFacebook },
+    { href: "https://twitter.com/achillies_", icon: faTwitter },
+    { href: "https://www.instagram.com/achillies_", icon: faInstagram },
+    { href: "https://www.linkedin.com/in/sylvesterdas/", icon: faLinkedinIn },
+  ]
 
   constructor(
     private titleService: Title,

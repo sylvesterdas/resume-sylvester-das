@@ -14,24 +14,9 @@
     </p>
     <div class="social-icons">
       <ul class="list-inline">
-        <li class="list-inline-item">
-          <a target="_blank" href="https://www.facebook.com/sylvester.das"
-            ><fa-icon [icon]="faFacebook"></fa-icon
-          ></a>
-        </li>
-        <li class="list-inline-item">
-          <a target="_blank" href="https://twitter.com/achillies_"
-            ><fa-icon [icon]="faTwitter"></fa-icon
-          ></a>
-        </li>
-        <li class="list-inline-item">
-          <a target="_blank" href="https://www.instagram.com/achillies_"
-            ><fa-icon [icon]="faInstagram"></fa-icon
-          ></a>
-        </li>
-        <li class="list-inline-item">
-          <a target="_blank" href="https://www.linkedin.com/in/sylvesterdas/"
-            ><fa-icon [icon]="faLinkedinIn"></fa-icon
+        <li *ngFor="let social of socialIcons" class="list-inline-item">
+          <a rel="noopener" target="_blank" [href]="social.href"
+            ><fa-icon [icon]="social.icon"></fa-icon
           ></a>
         </li>
       </ul>

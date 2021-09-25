@@ -9,7 +9,7 @@
       <div class="timeline-heading">
         <h3>{{ data.head }}</h3>
         <span
-          ><a *ngFor="let link of data.links" [href]="link.a" target="_blank">{{
+          ><a rel="noopener" *ngFor="let link of data.links" [href]="link.a" target="_blank">{{
             link.content
           }}</a></span
         >
