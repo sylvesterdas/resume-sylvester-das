@@ -72,24 +72,139 @@ h3 {
 }
 
 .text-center h3 {
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .chart {
   position: relative;
   display: inline-block;
-  width: 140px;
-  height: 140px;
-  margin: 40px auto;
+  width: 100%;
+  height: 100%;
+  margin: auto;
   text-align: center;
 }
 
-round-progress:after {
-  content: attr(aria-valuenow) " %";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
-  font-weight: 500;
+.circular {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  position: relative;
+
+  .inner {
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 50%;
+    height: 84px;
+    width: 84px;
+
+    margin: -42px 0 0 -42px;
+    background: #1a1e23;
+    border-radius: 100%;
+  }
+
+  .number {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:10;
+    font-size:18px;
+    font-weight:500;
+    color:#68c3a3;
+  }
+
+  .bar{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #3a4149;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+
+    .progress{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+      clip: rect(0px, 50px, 100px, 0px);
+      background: #68c3a3;
+    }
+  }
+
+  .progress {
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+  }
+
+  .left .progress{
+    border-radius: 100%;
+    z-index:1;
+    animation: left 2s linear both 0s;
+  }
+  @keyframes left{
+    100%{
+      transform: rotate(180deg);
+    }
+  }
+
+  .right {
+    z-index:3;
+    transform: rotate(180deg);
+    border-radius: 100%;
+  }
+
+  .right{
+    &.r-75 .progress {
+      animation: r-75 2s linear both 2s;
+    }
+    &.r-80 .progress {
+      animation: r-80 2s linear both 2s;
+    }
+    &.r-85 .progress {
+      animation: r-85 2s linear both 2s;
+    }
+    &.r-90 .progress {
+      animation: r-90 2s linear both 2s;
+    }
+    &.r-95 .progress {
+      animation: r-95 2s linear both 2s;
+    }
+    &.r-100 .progress {
+      animation: r-100 2s linear both 2s;
+    }
+  }
+
+  @keyframes r-75{
+    100%{
+      transform: rotate(135deg);
+    }
+  }
+  @keyframes r-80{
+    100%{
+      transform: rotate(144deg);
+    }
+  }
+  @keyframes r-85{
+    100%{
+      transform: rotate(153deg);
+    }
+  }
+  @keyframes r-90{
+    100%{
+      transform: rotate(162deg);
+    }
+  }
+  @keyframes r-95{
+    100%{
+      transform: rotate(171deg);
+    }
+  }
+  @keyframes r-100{
+    100%{
+      transform: rotate(180deg);
+    }
+  }
 }

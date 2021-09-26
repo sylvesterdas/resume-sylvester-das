@@ -59,21 +59,19 @@
     <div class="row more-skill text-center">
       <div class="col-xs-12 col-sm-4 col-md-2" *ngFor="let skill of moreSkills | keyvalue">
         <div class="chart">
-          <round-progress
-            [current]="skill.value"
-            [max]="100"
-            background="#3a4149"
-            color="#68c3a3"
-            [stroke]="14"
-            [responsive]="true"
-            [rounded]="true"
-            [duration]="2500"
-            [animationDelay]="500"
-            animation="easeOutCirc"
-            [attr.aria-valuenow]="skill.value"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></round-progress>
+          <div class="circular">
+            <div class="inner"></div>
+            <div class="number">{{skill.value}} %</div>
+            <div class="circle">
+               <div class="bar left">
+                  <div class="progress"></div>
+               </div>
+               <div class="bar right {{'r-' + skill.value}}">
+                  <div class="progress"></div>
+               </div>
+             </div>
+          </div>
+
           <div class="text-center">
             <h3>{{ skill.key }}</h3>
           </div>
