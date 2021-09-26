@@ -79,7 +79,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="location-map">
-              <div *ngIf="apiLoaded | async">
+              <div>
                 <google-map [options]="options" id="mapCanvas" width="100%"></google-map>
               </div>
             </div>
