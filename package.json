@@ -10,9 +10,7 @@
     "dev:ssr": "ng run resume-ng2:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build && ng run resume-ng2:server",
-    "prerender": "ng run resume-ng2:prerender",
-    "build:functions": "npm run --prefix functions build",
-    "build:all": "npm run build:ssr && npm run build:functions"
+    "prerender": "ng run resume-ng2:prerender"
   },
   "private": true,
   "dependencies": {
