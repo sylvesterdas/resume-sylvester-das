@@ -2,8 +2,6 @@
 
 # compiled output
 /dist/*
-!/dist/browser
-!/dist/server
 /tmp
 /out-tsc
 # Only exists if Bazel was run
