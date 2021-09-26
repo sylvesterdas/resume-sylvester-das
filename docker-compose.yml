@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  resume-sylvester-das:
+    build:
+      context: app
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "5000:4000"
