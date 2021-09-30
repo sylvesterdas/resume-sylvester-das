@@ -6,4 +6,4 @@ services:
       context: app
       dockerfile: .docker/Dockerfile
     ports:
-      - "5000:4000"
+      - "80:4000"
