@@ -1,0 +1,16 @@
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name localhost;
+
+    ssl_certificate         /secrets/fullchain.pem;
+    ssl_certificate_key     /secrets/privkey.pem;
+
+    location / {
+        proxy_set_header   X-Forwarded-For $remote_addr;
+        proxy_set_header   Host $http_host;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+
+        proxy_pass         http://app:4000;
+    }
+}

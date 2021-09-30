@@ -15,13 +15,11 @@ COPY tsconfig.server.json tsconfig.server.json
 RUN npm ci
 RUN npm run build:ssr
 
-FROM nginxinc/nginx-unprivileged:alpine
+FROM node:14-slim
 
-WORKDIR /user/share/nginx/html
-COPY --from=build --chown=nginx /dist .
+WORKDIR /app
+COPY --from=build /dist dist
 
-COPY .docker/default.conf.template /etc/nginx/templates/default.conf.template
-
-EXPOSE 80
+EXPOSE 4000
 
 ENTRYPOINT [ "node", "dist/server/main.js" ]
