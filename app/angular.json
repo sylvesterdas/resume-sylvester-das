@@ -35,6 +35,7 @@
               "src/favicon.ico",
               "src/browserconfig.xml",
               "src/site.webmanifest",
+              "src/serviceWorker.js",
               "src/assets"
             ],
             "styles": [
@@ -106,9 +107,12 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/sitemap.xml",
+              "src/robots.txt",
               "src/favicon.ico",
               "src/browserconfig.xml",
               "src/site.webmanifest",
+              "src/serviceWorker.js",
               "src/assets"
             ],
             "styles": [

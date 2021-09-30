@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Sylvester Das - Software programmer, Website and Application developer",
+    "short_name": "Sylvester Das",
     "icons": [
         {
             "src": "/assets/icons/android-chrome-192x192.png",
@@ -15,5 +15,6 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "browser",
+    "start_url": "/"
 }

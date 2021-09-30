@@ -14,6 +14,19 @@
     <meta name="theme-color" content="#ffffff">
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDePhvLW-EQAc9iFy2l3wfU0gXogCsiftE"></script>
+
+    <script defer>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./serviceWorker.js')
+          .then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      }
+    </script>
   </head>
   <body>
     <app-root></app-root>
