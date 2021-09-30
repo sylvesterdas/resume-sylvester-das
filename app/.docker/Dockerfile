@@ -12,9 +12,6 @@ COPY tsconfig.app.json tsconfig.app.json
 COPY tsconfig.json tsconfig.json
 COPY tsconfig.server.json tsconfig.server.json
 
-RUN ls -l /
-RUN ls -l /src
-
 RUN npm ci
 RUN npm run build:ssr
 
