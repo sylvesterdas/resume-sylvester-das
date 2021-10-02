@@ -28,7 +28,7 @@ jobs:
 
       - name: npm build app
         run: |
-          npm --prefix app run build 
+          npm --prefix app run build:ssr
           ls -l
           ls -l dist
           ls -l app/
