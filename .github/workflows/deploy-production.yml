@@ -37,5 +37,5 @@ jobs:
             port: 22
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
-            local-dir: ./dist
-            server-dir: ./dist
+            local-dir: .
+            server-dir: ./app
