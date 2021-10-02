@@ -39,7 +39,7 @@ jobs:
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
             sourceDir: ./app/dist
-            targetDir: ./app/dist
+            targetDir: ./server/app/dist
 
       - name: Deploy app
         uses: AbleLincoln/push-to-sftp@v1.0
@@ -49,7 +49,7 @@ jobs:
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
             sourceDir: ./app/.docker
-            targetDir: ./app/.docker
+            targetDir: ./server/app/.docker
 
       - name: Deploy nginx
         uses: AbleLincoln/push-to-sftp@v1.0
@@ -59,7 +59,7 @@ jobs:
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
             sourceDir: ./nginx
-            targetDir: ./nginx
+            targetDir: ./server/nginx
 
       - name: Deploy docker-compose.yml
         uses: AbleLincoln/push-to-sftp@v1.0
@@ -69,4 +69,4 @@ jobs:
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
             sourceDir: docker-compose.yml
-            targetDir: ./docker-compose.yml
+            targetDir: ./server/
