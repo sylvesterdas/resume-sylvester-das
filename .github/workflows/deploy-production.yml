@@ -27,10 +27,8 @@ jobs:
         run: npm i -g @angular/cli@12
 
       - name: npm build app
-        run: npm --prefix app run build
-
-      - name: Check build
         run: |
+          npm --prefix app run build 
           ls -l
-          ls -l server
-          ls -l browser
+          ls -l dist
+          ls -l app/
