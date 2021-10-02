@@ -29,9 +29,13 @@ jobs:
       - name: npm build app
         run: npm --prefix app run build:ssr
           
-      - name: check builds
-        run: |
-          ls -l
-          ls -l dist
-          ls -l dist/browser
-          ls -l dist/server
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        env:
+          FTP_SERVER: ${{ secrets.SERVER }}
+          FTP_USERNAME: ${{ secrets.USERNAME }}
+          FTP_PASSWORD: ${{ secrets.PASSWORD }}
+          LOCAL_DIR: dist
+          METHOD: sftp
+          PORT: 22
+          ARGS: --delete
