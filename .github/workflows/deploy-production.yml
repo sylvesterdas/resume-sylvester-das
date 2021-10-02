@@ -21,10 +21,9 @@ jobs:
           node-version: '14'
 
       - name: Move inside app directory
-        run: cd app
-
-      - name: Install dependancies
-        run: npm ci
+        run: |
+          cd app
+          npm ci
 
       - name: Install angular cli 12
         run: ng --version
