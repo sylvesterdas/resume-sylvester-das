@@ -80,4 +80,4 @@ jobs:
           port: 22
           script: |
             cd server
-            bash ./server/deploy.sh
+            bash ./deploy.sh
