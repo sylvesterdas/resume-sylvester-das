@@ -20,10 +20,14 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Move inside app directory
-        run: |
-          cd app
-          npm ci
+      - name: Clean install app
+        run: npm --prefix app ci
+        
+      - name: Check node_modules in app
+        run: ls -ls app
 
-      - name: Install angular cli 12
+      - name: Install angular cli
+        run: npm i -g @angular/cli@12
+
+      - name: Check angular cli 12
         run: ng --version
