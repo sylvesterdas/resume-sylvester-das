@@ -29,5 +29,5 @@ jobs:
       - name: Install angular cli
         run: npm i -g @angular/cli@12
 
-      - name: Check angular cli 12
-        run: ng --version
+      - name: npm build app
+        run: npm --prefix app run build
