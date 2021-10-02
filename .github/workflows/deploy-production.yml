@@ -78,4 +78,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: 22
-          script: bash ./server/deploy.sh
+          script: |
+            cd server
+            bash ./server/deploy.sh
