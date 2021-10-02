@@ -78,4 +78,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: 22
-          script: ./server/deploy.sh
+          script: sudo bash -H ./server/deploy.sh
