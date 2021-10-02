@@ -68,5 +68,14 @@ jobs:
             port: 22
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
-            sourceDir: docker-compose.yml
-            targetDir: ./server/
+            sourceDir: ./deployment
+            targetDir: ./server
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: ./server/deploy.sh
