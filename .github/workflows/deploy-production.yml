@@ -4,7 +4,7 @@ name: CI
 
 on:
   push:
-    branches: [ deploy-production ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -61,7 +61,7 @@ jobs:
             sourceDir: ./nginx
             targetDir: ./server/nginx
 
-      - name: Deploy docker-compose.yml
+      - name: push deploy scripts
         uses: AbleLincoln/push-to-sftp@v1.0
         with:
             host: ${{ secrets.SERVER }}
@@ -71,7 +71,7 @@ jobs:
             sourceDir: ./deployment
             targetDir: ./server
 
-      - name: executing remote ssh commands using password
+      - name: Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER }}
