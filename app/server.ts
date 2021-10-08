@@ -8,6 +8,11 @@ import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
+import { fork, isMaster, worker } from "cluster";
+import { cpus } from "os";
+
+const numCPUs = cpus().length;
+
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
@@ -40,11 +45,17 @@ export function app(): express.Express {
 function run(): void {
   const port = process.env.PORT || 4000;
 
-  // Start up the Node server
-  const server = app();
-  server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
-  });
+  if (isMaster) {
+    const workers: any[] = [];
+    workers.length = numCPUs;
+    workers.fill(0, 0).forEach(() => fork());
+  } else {
+    // Start up the Node server
+    const server = app();
+    server.listen(port, () => {
+      console.log(`Node server ${worker.id} listening on PORT: ${port}`);
+    });
+  }
 }
 
 // Webpack will replace 'require' with '__webpack_require__'
