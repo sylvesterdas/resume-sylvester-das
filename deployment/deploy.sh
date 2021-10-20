@@ -5,3 +5,5 @@ if [[ $(docker images -f "dangling=true" -q) ]]; then
 fi
 
 docker-compose up --build -d 
+
+rm -rf app nginx
