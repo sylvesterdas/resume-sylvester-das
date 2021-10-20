@@ -50,7 +50,7 @@ jobs:
           server: ${{ secrets.CANADA_SERVER_IP }}
           ssh_private_key: ${{ secrets.CANADA_SERVER }} 
           local_path: ./app/dist
-          remote_path: ./server/app/dist
+          remote_path: ./server/app
           args: '-o ConnectTimeout=5'
 
       - name: Deploy app to Mumbai
@@ -70,7 +70,7 @@ jobs:
           server: ${{ secrets.CANADA_SERVER_IP }}
           ssh_private_key: ${{ secrets.CANADA_SERVER }} 
           local_path: ./app/.docker
-          remote_path: ./server/app/.docker
+          remote_path: ./server/app/
           args: '-o ConnectTimeout=5'
 
       - name: Deploy nginx to Mumbai
@@ -90,7 +90,7 @@ jobs:
           server: ${{ secrets.CANADA_SERVER_IP }}
           ssh_private_key: ${{ secrets.CANADA_SERVER }} 
           local_path: ./nginx
-          remote_path: ./server/nginx
+          remote_path: ./server
           args: '-o ConnectTimeout=5'
 
       - name: Deploy scripts to Mumbai
@@ -110,7 +110,7 @@ jobs:
           server: ${{ secrets.CANADA_SERVER_IP }}
           ssh_private_key: ${{ secrets.CANADA_SERVER }} 
           local_path: ./deployment
-          remote_path: ./server
+          remote_path: ./
           args: '-o ConnectTimeout=5'
 
       - name: Deploy
