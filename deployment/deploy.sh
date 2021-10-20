@@ -6,4 +6,4 @@ fi
 
 docker-compose up --build -d 
 
-rm -rf app nginx
+rm -rf app/dist app/.docker nginx
