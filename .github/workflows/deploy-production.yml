@@ -109,11 +109,32 @@ jobs:
           username: ${{ secrets.CANADA_SERVER_USER }}
           server: ${{ secrets.CANADA_SERVER_IP }}
           ssh_private_key: ${{ secrets.CANADA_SERVER }} 
-          local_path: ./deployment
-          remote_path: ./
+          local_path: ./deployment/deploy.sh
+          remote_path: ./server
           args: '-o ConnectTimeout=5'
+      
+      - name: Deploy compose to Canada
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{ secrets.CANADA_SERVER_USER }}
+          server: ${{ secrets.CANADA_SERVER_IP }}
+          ssh_private_key: ${{ secrets.CANADA_SERVER }} 
+          local_path: ./deployment/docker-compose.yml
+          remote_path: ./server
+          args: '-o ConnectTimeout=5'
+      
+      - name: Deploy to Mumbai
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd server
+            bash ./deploy.sh
 
-      - name: Deploy
+      - name: Deploy to Canada
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.CANADA_SERVER_IP }}
