@@ -6,6 +6,9 @@ on:
   push:
     branches: 
       - main
+  pull_request:
+    branches:
+      - main
 
   workflow_dispatch:
 
@@ -30,7 +33,7 @@ jobs:
       - name: npm build app
         run: npm --prefix app run build:ssr
 
-      - name: Deploy dist
+      - name: Deploy dist to Mumbai
         uses: AbleLincoln/push-to-sftp@v1.0
         with:
             host: ${{ secrets.SERVER }}
@@ -39,8 +42,18 @@ jobs:
             password: ${{ secrets.PASSWORD }}
             sourceDir: ./app/dist
             targetDir: ./server/app/dist
+      
+      - name: Deploy dist to Canada
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{ secrets.CANADA_SERVER_USER }}
+          server: ${{ secrets.CANADA_SERVER_IP }}
+          ssh_private_key: ${{ secrets.CANADA_SERVER }} 
+          local_path: ./app/dist
+          remote_path: ./server/app/dist
+          args: '-o ConnectTimeout=5'
 
-      - name: Deploy app
+      - name: Deploy app to Mumbai
         uses: AbleLincoln/push-to-sftp@v1.0
         with:
             host: ${{ secrets.SERVER }}
@@ -49,8 +62,18 @@ jobs:
             password: ${{ secrets.PASSWORD }}
             sourceDir: ./app/.docker
             targetDir: ./server/app/.docker
+      
+      - name: Deploy app to Canada
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{ secrets.CANADA_SERVER_USER }}
+          server: ${{ secrets.CANADA_SERVER_IP }}
+          ssh_private_key: ${{ secrets.CANADA_SERVER }} 
+          local_path: ./app/.docker
+          remote_path: ./server/app/.docker
+          args: '-o ConnectTimeout=5'
 
-      - name: Deploy nginx
+      - name: Deploy nginx to Mumbai
         uses: AbleLincoln/push-to-sftp@v1.0
         with:
             host: ${{ secrets.SERVER }}
@@ -59,8 +82,18 @@ jobs:
             password: ${{ secrets.PASSWORD }}
             sourceDir: ./nginx
             targetDir: ./server/nginx
+      
+      - name: Deploy nginx to Canada
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{ secrets.CANADA_SERVER_USER }}
+          server: ${{ secrets.CANADA_SERVER_IP }}
+          ssh_private_key: ${{ secrets.CANADA_SERVER }} 
+          local_path: ./nginx
+          remote_path: ./server/nginx
+          args: '-o ConnectTimeout=5'
 
-      - name: push deploy scripts
+      - name: Deploy scripts to Mumbai
         uses: AbleLincoln/push-to-sftp@v1.0
         with:
             host: ${{ secrets.SERVER }}
@@ -69,13 +102,23 @@ jobs:
             password: ${{ secrets.PASSWORD }}
             sourceDir: ./deployment
             targetDir: ./server
+      
+      - name: Deploy scripts to Canada
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{ secrets.CANADA_SERVER_USER }}
+          server: ${{ secrets.CANADA_SERVER_IP }}
+          ssh_private_key: ${{ secrets.CANADA_SERVER }} 
+          local_path: ./deployment
+          remote_path: ./server
+          args: '-o ConnectTimeout=5'
 
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          host: ${{ secrets.CANADA_SERVER_IP }}
+          username: ${{ secrets.CANADA_SERVER_USER }}
+          key: ${{ secrets.CANADA_SERVER }} 
           port: 22
           script: |
             cd server
