@@ -47,7 +47,7 @@ jobs:
           server: ${{ secrets.CANADA_SERVER_IP }}
           ssh_private_key: ${{ secrets.CANADA_SERVER }} 
           local_path: ./app/dist
-          remote_path: ./server/app
+          remote_path: ./server/app/
           args: '-o ConnectTimeout=5'
 
       - name: Deploy app to Mumbai
