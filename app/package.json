@@ -1,6 +1,6 @@
 {
   "name": "resume-sylvester-das",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "scripts": {
     "ng": "ng",
     "start": "npm run serve:ssr",
@@ -54,5 +54,28 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
-  }
+  },
+  "description": "> Using `Angular`",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sylvesterdas/resume-sylvester-das.git"
+  },
+  "keywords": [
+    "Sylvester",
+    "Das",
+    "resume",
+    "portfolio",
+    "nginx",
+    "http2"
+  ],
+  "author": {
+    "name": "Sylvester Das",
+    "email": "sylvester.das@gmail.com",
+    "url": "https://www.sylvesterdas.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sylvesterdas/resume-sylvester-das/issues"
+  },
+  "homepage": "https://github.com/sylvesterdas/resume-sylvester-das#readme"
 }
