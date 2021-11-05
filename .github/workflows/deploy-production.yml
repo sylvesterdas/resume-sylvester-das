@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: Build and deploy
 
 on:
   push:
@@ -30,16 +28,6 @@ jobs:
       - name: npm build app
         run: npm --prefix app run build:ssr
 
-      # - name: Deploy dist to Mumbai
-      #   uses: AbleLincoln/push-to-sftp@v1.0
-      #   with:
-      #       host: ${{ secrets.SERVER }}
-      #       port: 22
-      #       username: ${{ secrets.USERNAME }}
-      #       password: ${{ secrets.PASSWORD }}
-      #       sourceDir: ./app/dist
-      #       targetDir: ./server/app/dist
-      
       - name: Deploy dist to Canada
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
@@ -50,16 +38,6 @@ jobs:
           remote_path: ./server/app/
           args: '-o ConnectTimeout=5'
 
-      # - name: Deploy app to Mumbai
-      #   uses: AbleLincoln/push-to-sftp@v1.0
-      #   with:
-      #       host: ${{ secrets.SERVER }}
-      #       port: 22
-      #       username: ${{ secrets.USERNAME }}
-      #       password: ${{ secrets.PASSWORD }}
-      #       sourceDir: ./app/.docker
-      #       targetDir: ./server/app/.docker
-      
       - name: Deploy app to Canada
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
@@ -70,16 +48,6 @@ jobs:
           remote_path: ./server/app/
           args: '-o ConnectTimeout=5'
 
-      # - name: Deploy nginx to Mumbai
-      #   uses: AbleLincoln/push-to-sftp@v1.0
-      #   with:
-      #       host: ${{ secrets.SERVER }}
-      #       port: 22
-      #       username: ${{ secrets.USERNAME }}
-      #       password: ${{ secrets.PASSWORD }}
-      #       sourceDir: ./nginx
-      #       targetDir: ./server/nginx
-      
       - name: Deploy nginx to Canada
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
@@ -90,16 +58,6 @@ jobs:
           remote_path: ./server
           args: '-o ConnectTimeout=5'
 
-      # - name: Deploy scripts to Mumbai
-      #   uses: AbleLincoln/push-to-sftp@v1.0
-      #   with:
-      #       host: ${{ secrets.SERVER }}
-      #       port: 22
-      #       username: ${{ secrets.USERNAME }}
-      #       password: ${{ secrets.PASSWORD }}
-      #       sourceDir: ./deployment
-      #       targetDir: ./server
-      
       - name: Deploy scripts to Canada
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
@@ -120,17 +78,6 @@ jobs:
           remote_path: ./server
           args: '-o ConnectTimeout=5'
       
-      # - name: Deploy to Mumbai
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.SERVER }}
-      #     username: ${{ secrets.USERNAME }}
-      #     password: ${{ secrets.PASSWORD }}
-      #     port: 22
-      #     script: |
-      #       cd server
-      #       bash ./deploy.sh
-
       - name: Deploy to Canada
         uses: appleboy/ssh-action@master
         with:
