@@ -14,6 +14,8 @@ server {
         proxy_set_header   X-Forwarded-Proto $scheme;
 
         proxy_pass         http://app:4000;
+
+        http2_push         /assets/images/preloader.gif;
     }
 
     if ($scheme = http) {
