@@ -1,6 +1,6 @@
 server {
     listen 80;
-    listen 443 ssl;
+    listen 443 http2 ssl;
     server_name localhost;
 
     set $hstsHeader "max-age=31536000; includeSubDomains; preload";
