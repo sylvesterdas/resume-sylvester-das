@@ -16,6 +16,7 @@ server {
         proxy_pass         http://app:4000;
 
         http2_push         /assets/images/preloader.gif;
+        http2_push_preload on;
     }
 
     if ($scheme = http) {
